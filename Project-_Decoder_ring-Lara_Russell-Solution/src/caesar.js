@@ -14,8 +14,14 @@ const caesarModule = (function () {
 
  // note to self: will want to use charAt()
   function caesar(input, shift, encode = true) {
+    let output = [];
     for (let i = 0; i<input.length, i++){
-      const temp = input.charAt(i);
+      const temp = input..toLowerCase().charCodeAt(i) + shift;
+      while (temp > 122) {
+        temp = (temp - 122) + 96 }
+      output.push(string.fromCharCode(temp))
+    }
+    return output
       
     
   }
