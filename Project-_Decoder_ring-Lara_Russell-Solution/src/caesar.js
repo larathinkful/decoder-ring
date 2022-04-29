@@ -14,9 +14,12 @@ const caesarModule = (function () {
 
  // note to self: will want to use charAt()
   function caesar(input, shift, encode = true) {
-    let output = [];
+    let output = []
+    if (!shift || shift = 0 || shift < -25 || shift > 25) {
+      return false;
+    }
     for (let i = 0; i<input.length, i++){
-      const temp = input..toLowerCase().charCodeAt(i) + shift;
+      const temp = input.charCodeAt(i) + shift;
       while (temp > 122) {
         temp = (temp - 122) + 96 }
       output.push(string.fromCharCode(temp))
